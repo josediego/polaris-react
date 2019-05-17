@@ -46,11 +46,15 @@ export class FilterControl extends React.Component<CombinedProps> {
       polaris: {intl},
       context: {selectMode, resourceName},
     } = this.props;
+    const filterResourceName = resourceName || {
+      singular: intl.translate('Polaris.ResourceList.defaultItemSingular'),
+      plural: intl.translate('Polaris.ResourceList.defaultItemPlural'),
+    };
 
     const textFieldLabel = placeholder
       ? placeholder
       : intl.translate('Polaris.ResourceList.FilterControl.textFieldLabel', {
-          resourceNamePlural: resourceName.plural.toLocaleLowerCase(),
+          resourceNamePlural: filterResourceName.plural.toLocaleLowerCase(),
         });
 
     if (additionalAction) {
@@ -63,7 +67,7 @@ export class FilterControl extends React.Component<CombinedProps> {
     const filterCreatorMarkup =
       filters.length > 0 ? (
         <FilterCreator
-          resourceName={resourceName}
+          resourceName={filterResourceName}
           filters={filters}
           onAddFilter={this.handleAddFilter}
           disabled={selectMode}
