@@ -3,6 +3,7 @@ import * as Polaris from '../src';
 import {withA11y} from '@storybook/addon-a11y';
 import {storiesOf} from '@storybook/react';
 import Playground from '../playground/Playground';
+import en from '../locales/en.json';
 
 /**
  * In most cases we want to test an "All Examples" page as fewer snapshots
@@ -65,7 +66,7 @@ export function addPlaygroundStory(playgroundModule) {
 function AppProviderDecorator(story) {
   return (
     <div style={{padding: '8px'}}>
-      <Polaris.AppProvider>{story()}</Polaris.AppProvider>
+      <Polaris.AppProvider i18n={en}>{story()}</Polaris.AppProvider>
     </div>
   );
 }
