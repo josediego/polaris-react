@@ -17,6 +17,7 @@ This release fixes an issue introduced in `v3.14.0` that caused the `esnext` bui
 - Enhanced `NavigationItem`'s color accessibility for `active`, `focus`, `hover` and `Selected` states ([1304](https://github.com/Shopify/polaris-react/pull/1304))
 - Added `align` prop to `TextField` ([#1428](https://github.com/Shopify/polaris-react/pull/1428))
 - Added `clearButton` prop to `TextField` ([#1226](https://github.com/Shopify/polaris-react/pull/1226))
+- Improves performance of `TabMeasure` component ([#1544](https://github.com/Shopify/polaris-react/pull/1544))
 
 ### Bug fixes
 
