@@ -1,11 +1,11 @@
 import React from 'react';
-import isEqual from 'lodash/isEqual';
 import {classNames} from '@shopify/css-utilities';
 import {
   Button as AppBridgeButton,
   TitleBar as AppBridgeTitleBar,
 } from '@shopify/app-bridge/actions';
 
+import isObjectsEqual from '../../utilities/isObjectsEqual';
 import {
   transformActions,
   generateRedirect,
@@ -67,7 +67,7 @@ export class Page extends React.PureComponent<ComposedProps, never> {
     const prevAppBridgeProps = pick(prevProps, APP_BRIDGE_PROPS);
     const currentAppBridgeProps = pick(this.props, APP_BRIDGE_PROPS);
 
-    if (!isEqual(prevAppBridgeProps, currentAppBridgeProps)) {
+    if (!isObjectsEqual(prevAppBridgeProps, currentAppBridgeProps)) {
       const transformedProps = this.transformProps();
       if (!transformedProps) return;
 

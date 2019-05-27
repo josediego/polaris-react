@@ -1,6 +1,6 @@
 import React from 'react';
 import compose from '@shopify/react-compose';
-import isEqual from 'lodash/isEqual';
+import isObjectsEqual from '../../utilities/isObjectsEqual';
 import {ContextualSaveBarProps, FrameContextType, FrameContext} from '../Frame';
 import withContext from '../WithContext';
 import {WithContextTypes} from '../../types';
@@ -51,8 +51,8 @@ function contextualSaveBarHasChanged(
 ) {
   return Boolean(
     message !== oldMessage ||
-      !isEqual(saveAction, oldsaveAction) ||
-      !isEqual(discardAction, oldDiscardAction),
+      !isObjectsEqual(saveAction, oldsaveAction) ||
+      !isObjectsEqual(discardAction, oldDiscardAction),
   );
 }
 
