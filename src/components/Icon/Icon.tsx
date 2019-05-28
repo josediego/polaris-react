@@ -1,5 +1,4 @@
 import React from 'react';
-import {classNames, variationName} from '@shopify/css-utilities';
 import {
   PlusMinor,
   AlertMinor,
@@ -55,6 +54,7 @@ import {
   ViewMinor,
 } from '@shopify/polaris-icons';
 
+import {classNames, variationName} from '../../utilities/css';
 import {withAppProvider, WithAppProviderProps} from '../AppProvider';
 
 import styles from './Icon.scss';

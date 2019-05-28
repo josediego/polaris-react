@@ -1,6 +1,6 @@
 import React from 'react';
 import {CircleCancelMinor, SearchMinor} from '@shopify/polaris-icons';
-import {classNames} from '@shopify/css-utilities';
+import {classNames} from '../../../../utilities/css';
 
 import Icon from '../../../Icon';
 import {withAppProvider, WithAppProviderProps} from '../../../AppProvider';
