@@ -92,7 +92,7 @@ AppProvider works by default without any additional options passed to it.
 
 ### With i18n
 
-With an `i18n`, `AppProvider` will provide these translations to polaris components. For usage see [using translations](/components/structure/app-provider#using-translations)
+With an `i18n`, `AppProvider` will provide these translations to polaris components. See [using translations](/components/structure/app-provider#using-translations)
 
 ```jsx
 <AppProvider
