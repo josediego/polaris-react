@@ -1,5 +1,5 @@
 import React from 'react';
-import {mountWithContext} from 'test-utilities/modern';
+import {mountWithContext} from 'test-utilities/react-testing';
 import RadioButton from '../RadioButton';
 
 describe('<RadioButton />', () => {
