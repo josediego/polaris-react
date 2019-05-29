@@ -22,8 +22,8 @@ interface Providers {
   themeProvider: ThemeProviderContextType;
   frame: FrameContextType;
 }
-type Options = {};
-type Context = DeepPartial<Providers>;
+type Options = DeepPartial<Providers>;
+type Context = Providers;
 interface Props extends Providers {
   children: React.ReactElement<any>;
 }
@@ -54,7 +54,7 @@ function TestProvider({
 }
 
 export const mountWithContext = createMount<Options, Context>({
-  render(element, {polaris, themeProvider, frame}) {
+  context({polaris, themeProvider, frame}) {
     const polarisContextDefault = createPolarisContext();
     const polarisContext =
       (polaris && merge(polarisContextDefault, polaris)) ||
@@ -76,11 +76,18 @@ export const mountWithContext = createMount<Options, Context>({
     const frameContext =
       (frame && merge(frameContextDefault, frame)) || frameContextDefault;
 
+    return {
+      polaris: polarisContext,
+      themeProvider: themeProviderContext,
+      frame: frameContext,
+    };
+  },
+  render(element, {polaris, themeProvider, frame}) {
     return (
       <TestProvider
-        polaris={polarisContext}
-        themeProvider={themeProviderContext}
-        frame={frameContext}
+        polaris={polaris}
+        themeProvider={themeProvider}
+        frame={frame}
       >
         {element}
       </TestProvider>
