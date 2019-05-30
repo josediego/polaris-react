@@ -187,6 +187,18 @@ Use to render a buttons that look like links where matching the surrounding text
 />
 ```
 
+### Plain destructive button
+
+<!-- example-for: online-store-ui -->
+
+Use to render a buttons that look like links where matching the surrounding text color is visually more appropriate. For example in the InlineError component.
+
+```jsx
+<Button plain destructive>
+  Remove
+</Button>
+```
+
 ### Primary button
 
 Use to highlight the most important actions in any experience. Don’t use more than one primary button in a section or screen to avoid overwhelming merchants.

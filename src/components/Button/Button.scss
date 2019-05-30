@@ -149,6 +149,13 @@ $spinner-size: rem(20px);
     margin-right: 0;
   }
 
+  &.destructive {
+    color: color('red');
+    &:hover {
+      color: color('red', 'dark');
+    }
+  }
+
   &.disabled {
     background: none;
   }
@@ -192,6 +199,7 @@ $spinner-size: rem(20px);
     margin-right: 0;
   }
 }
+
 // stylelint-enable selector-max-specificity
 
 .sizeSlim {
